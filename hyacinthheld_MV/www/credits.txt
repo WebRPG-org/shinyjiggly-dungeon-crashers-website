@@ -1,5 +1,4 @@
 HyacinthHeld - Credits
-demo build for july 14th, 2025
 
 A game made by:
 Lightmage Studios
@@ -311,3 +310,7 @@ No item categories
 
 Unagi Ootoro:
 Smooth Camera
+
+Alpha testers--
+frozenLake
+deftlyInscruitable

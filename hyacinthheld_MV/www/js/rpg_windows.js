@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_windows.js v1.3.3
+// rpg_windows.js v1.6.2
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -571,7 +571,6 @@ Window_Base.prototype.drawActorMp = function(actor, x, y, width) {
 };
 
 Window_Base.prototype.drawActorTp = function(actor, x, y, width) {
-	
     width = width || 96;
     var color1 = this.tpGaugeColor1();
     var color2 = this.tpGaugeColor2();
@@ -701,6 +700,12 @@ Window_Base.prototype.canvasToLocalY = function(y) {
         node = node.parent;
     }
     return y;
+};
+
+Window_Base.prototype.reserveFaceImages = function() {
+    $gameParty.members().forEach(function(actor) {
+        ImageManager.reserveFace(actor.faceName());
+    }, this);
 };
 
 //-----------------------------------------------------------------------------
@@ -1700,7 +1705,6 @@ Window_MenuStatus.prototype.initialize = function(x, y) {
     Window_Selectable.prototype.initialize.call(this, x, y, width, height);
     this._formationMode = false;
     this._pendingIndex = -1;
-    this.loadImages();
     this.refresh();
 };
 
@@ -1727,7 +1731,7 @@ Window_MenuStatus.prototype.numVisibleRows = function() {
 
 Window_MenuStatus.prototype.loadImages = function() {
     $gameParty.members().forEach(function(actor) {
-        ImageManager.loadFace(actor.faceName());
+        ImageManager.reserveFace(actor.faceName());
     }, this);
 };
 
@@ -1890,7 +1894,6 @@ Window_ItemCategory.prototype.makeCommandList = function() {
 
 Window_ItemCategory.prototype.setItemWindow = function(itemWindow) {
     this._itemWindow = itemWindow;
-    this.update();
 };
 
 //-----------------------------------------------------------------------------
@@ -2066,7 +2069,6 @@ Window_SkillType.prototype.update = function() {
 
 Window_SkillType.prototype.setSkillWindow = function(skillWindow) {
     this._skillWindow = skillWindow;
-    this.update();
 };
 
 Window_SkillType.prototype.selectLast = function() {
@@ -2427,7 +2429,6 @@ Window_EquipSlot.prototype.setStatusWindow = function(statusWindow) {
 
 Window_EquipSlot.prototype.setItemWindow = function(itemWindow) {
     this._itemWindow = itemWindow;
-    this.update();
 };
 
 Window_EquipSlot.prototype.updateHelp = function() {
@@ -2522,6 +2523,7 @@ Window_Status.prototype.initialize = function() {
     var width = Graphics.boxWidth;
     var height = Graphics.boxHeight;
     Window_Selectable.prototype.initialize.call(this, 0, 0, width, height);
+    this._actor = null;
     this.refresh();
     this.activate();
 };
@@ -3433,7 +3435,7 @@ Window_NameEdit.prototype.initialize = function(actor, maxLength) {
     this._defaultName = this._name;
     this.deactivate();
     this.refresh();
-    ImageManager.loadFace(actor.faceName());
+    ImageManager.reserveFace(actor.faceName());
 };
 
 Window_NameEdit.prototype.windowWidth = function() {
@@ -4252,6 +4254,7 @@ Window_Message.prototype.initialize = function() {
 };
 
 Window_Message.prototype.initMembers = function() {
+    this._imageReservationId = Utils.generateRuntimeId();
     this._background = 0;
     this._positionType = 2;
     this._waitCount = 0;
@@ -4363,7 +4366,7 @@ Window_Message.prototype.updateWait = function() {
 
 Window_Message.prototype.updateLoading = function() {
     if (this._faceBitmap) {
-        if (ImageManager.isReady()) {
+        if (this._faceBitmap.isReady()) {
             this.drawMessageFace();
             this._faceBitmap = null;
             return false;
@@ -4481,11 +4484,12 @@ Window_Message.prototype.newPage = function(textState) {
 };
 
 Window_Message.prototype.loadMessageFace = function() {
-    this._faceBitmap = ImageManager.loadFace($gameMessage.faceName());
+    this._faceBitmap = ImageManager.reserveFace($gameMessage.faceName(), 0, this._imageReservationId);
 };
 
 Window_Message.prototype.drawMessageFace = function() {
     this.drawFace($gameMessage.faceName(), $gameMessage.faceIndex(), 0, 0);
+    ImageManager.releaseReservation(this._imageReservationId);
 };
 
 Window_Message.prototype.newLineX = function() {
@@ -5894,7 +5898,6 @@ Window_DebugRange.prototype.processCancel = function() {
 
 Window_DebugRange.prototype.setEditWindow = function(editWindow) {
     this._editWindow = editWindow;
-    this.update();
 };
 
 //-----------------------------------------------------------------------------
