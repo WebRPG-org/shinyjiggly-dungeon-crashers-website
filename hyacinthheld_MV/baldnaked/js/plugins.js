@@ -9,5 +9,6 @@ var $plugins =
 {"name":"SRD_ActSpareSystem","status":true,"description":"Replicates the ACT/SPARE system from Undertale.","parameters":{"Enemy Variable ID":"10"}},
 {"name":"SRD_TimedAttackCore","status":true,"description":"Adds a system which forces the user to time certain inputs to preform actions during battle.","parameters":{"Enable Touch?":"true","Default Source":"None","== Window Options ==":"","X Alignment":"Center","Y Alignment":"Top","X Offset":"0","Y Offset":"0","Window Width":"Graphics.width","Window Height":"this.fittingHeight(3)","== Default Props. ==":"","Sound Effect":"Blow1","Cursor Image":"","Background Image":"DefaultBackground","Window Opacity":"255","Target Location":"Graphics.width / 2","Repeat Type":"None","Speed":"10","Main Color":"#FFFFFF","Shape":"Rectangle","Width":"24","Outline Color":"#000000","Outline Size":"3","Direction":"Right","Flash Rate":"8"}},
 {"name":"SRD_CEBattleIntro","status":true,"description":"Allows you to use a Common Event as your battle intro.","parameters":{"Common Event ID":"1","Auto Transition":"true","Normal BI Duration":"60"}},
-{"name":"AltSaveScreen","status":true,"description":"Alternative save/load screen layout.","parameters":{}}
+{"name":"AltSaveScreen","status":true,"description":"Alternative save/load screen layout.","parameters":{}},
+{"name":"HIME_SaveTitle","status":true,"description":"v1.2 - allows you to customize the title of the game that is\r\ndisplayed in the save file.","parameters":{}}
 ];
