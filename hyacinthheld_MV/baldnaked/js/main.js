@@ -3,7 +3,7 @@
 //=============================================================================
 
 PluginManager.setup($plugins);
-
+/*
 DataManager.isThisGameFile = function(savefileId) 
 {
 	var globalInfo = this.loadGlobalInfo();
@@ -16,7 +16,7 @@ DataManager.isThisGameFile = function(savefileId)
 	return false;
 	}
 };
-
+*/
 window.onload = function() {
     SceneManager.run(Scene_Boot);
 };
