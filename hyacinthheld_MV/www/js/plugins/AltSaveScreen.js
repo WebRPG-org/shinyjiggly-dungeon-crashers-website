@@ -115,7 +115,11 @@
     Window_SavefileStatus.prototype.drawContents = function(info, rect, valid) {
         var bottom = rect.y + rect.height;
         var playtimeY = bottom - this.lineHeight();
-        this.drawText(info.title, rect.x + 192, rect.y, rect.width - 192);
+//        this.drawText(info.title, rect.x + 192, rect.y, rect.width - 192);
+    var text = ""; // this holds the arbitrary string
+    if (info.chapter) text = info.chapter;
+    else if (info.title) text = info.title; //compatability!!
+    this.drawText(text, rect.x + 192, rect.y, rect.width - 192);
         if (valid) {
             this.drawPartyfaces(info, rect.x, bottom - 144);
         }
@@ -130,5 +134,17 @@
             }
         }
     };
+	
+	DataManager.makeSavefileInfo = function() { //this probably doesnt go here but I'm keeping it together!!
+    var info = {};
+    info.globalId   = this._globalId;
+    info.title      = $dataSystem.gameTitle;
+    info.characters = $gameParty.charactersForSavefile();
+    info.faces      = $gameParty.facesForSavefile();
+    info.playtime   = $gameSystem.playtimeText();
+    info.timestamp  = Date.now();
+    info.chapter    = $gameSystem.chapterText; //save the "chapter" thing here
+    return info;
+};
 
 })();
