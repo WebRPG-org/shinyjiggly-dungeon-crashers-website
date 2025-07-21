@@ -115,7 +115,12 @@
     Window_SavefileStatus.prototype.drawContents = function(info, rect, valid) {
         var bottom = rect.y + rect.height;
         var playtimeY = bottom - this.lineHeight();
-        this.drawText(info.title, rect.x + 192, rect.y, rect.width - 192);
+//        this.drawText(info.title, rect.x + 192, rect.y, rect.width - 192);
+    var text = ""; //instead of just grabbing title, use this dumdum "chapter" thing.
+    if (info.chapter) text = info.chapter;
+    else if (info.title) text = info.title;
+    this.drawText(text, rect.x + 192, rect.y, rect.width - 192);
+	//
         if (valid) {
             this.drawPartyfaces(info, rect.x, bottom - 144);
         }

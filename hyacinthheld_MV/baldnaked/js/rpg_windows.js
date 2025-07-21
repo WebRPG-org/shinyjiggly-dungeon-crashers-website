@@ -2851,11 +2851,23 @@ Window_SavefileList.prototype.drawContents = function(info, rect, valid) {
         this.drawPlaytime(info, rect.x, y2, rect.width);
     }
 };
-
+/*
 Window_SavefileList.prototype.drawGameTitle = function(info, x, y, width) {
     if (info.title) {
         this.drawText(info.title, x, y, width);
     }
+};
+*/
+
+Window_SavefileList.prototype.drawGameTitle = function(info, x, y, width) {
+    var text = ""; //instead of just grabbing title, use this dumdum "chapter" thing.
+    if (info.chapter) 
+		{text = info.chapter;
+	}
+    else if (info.title) 
+		{text = info.title;
+	}
+    this.drawText(text, x, y, width);
 };
 
 Window_SavefileList.prototype.drawPartyCharacters = function(info, x, y) {

@@ -270,8 +270,8 @@ DataManager.isThisGameFile = function(savefileId) {
             return true;
         } else {
             var savefile = globalInfo[savefileId];
-            return (savefile.globalId === this._globalId); //&&
-                    //savefile.title === $dataSystem.gameTitle);
+            return (savefile.globalId === this._globalId &&
+                    savefile.title === $dataSystem.gameTitle);
         }
     } else {
         return false;
@@ -424,6 +424,7 @@ DataManager.makeSavefileInfo = function() {
     info.faces      = $gameParty.facesForSavefile();
     info.playtime   = $gameSystem.playtimeText();
     info.timestamp  = Date.now();
+	info.chapter    = $gameSystem.chapterText; //save the "chapter" thing here
     return info;
 };
 
@@ -2111,7 +2112,7 @@ SceneManager.snap = function() {
 
 SceneManager.snapForBackground = function() {
     this._backgroundBitmap = this.snap();
-    this._backgroundBitmap.blur();
+    //this._backgroundBitmap.blur();
 };
 
 SceneManager.backgroundBitmap = function() {
