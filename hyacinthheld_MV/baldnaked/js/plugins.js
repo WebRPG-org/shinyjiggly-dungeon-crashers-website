@@ -28,5 +28,8 @@ var $plugins =
 {"name":"HIME_LargeChoices","status":true,"description":"v1.2 - Combines multiple show choice commands into a single,\r\nlarge list.","parameters":{}},
 {"name":"HIME_HiddenChoiceConditions","status":true,"description":"Allows you to hide choices with a simple event call","parameters":{}},
 {"name":"GALV_CursorImage","status":true,"description":"(v.1.8) Display an animated image next to the selected menu command.","parameters":{"Cursor Image":"Heart","Image Frames":"1","Position Centered":"true","Position Offset":"-8,0","Animation Speed":"6","Command Indent":"0","Item Indent":"32","Start Hidden":"false"}},
+{"name":"cae_balloon","status":true,"description":"Faster balloons!","parameters":{}},
+{"name":"Yami_8DIR","status":true,"description":"","parameters":{}},
+{"name":"HIME_GameOverEvents","status":true,"description":"v1.2 - Allows you to use events to set up a game over event.","parameters":{"Gameover Map ID":"2"}},
 {"name":"YR_LoadCallCE","status":true,"description":"Allows to call a common event when loading game.","parameters":{"Common Event":"2"}}
 ];
