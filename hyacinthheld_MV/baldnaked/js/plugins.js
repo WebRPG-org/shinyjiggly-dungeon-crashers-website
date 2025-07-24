@@ -25,5 +25,8 @@ var $plugins =
 {"name":"NovelMessage","status":true,"description":"Provides the full screen type message window.","parameters":{"Switch ID":"11"}},
 {"name":"TitleCommandPosition","status":true,"description":"Changes the position of the title command window.","parameters":{"Offset X":"-200","Offset Y":"60","Width":"240","Background":"2"}},
 {"name":"AltSaveScreen","status":true,"description":"Alternative save/load screen layout.","parameters":{}},
+{"name":"HIME_LargeChoices","status":true,"description":"v1.2 - Combines multiple show choice commands into a single,\r\nlarge list.","parameters":{}},
+{"name":"HIME_HiddenChoiceConditions","status":true,"description":"Allows you to hide choices with a simple event call","parameters":{}},
+{"name":"GALV_CursorImage","status":true,"description":"(v.1.8) Display an animated image next to the selected menu command.","parameters":{"Cursor Image":"Heart","Image Frames":"1","Position Centered":"true","Position Offset":"-8,0","Animation Speed":"6","Command Indent":"0","Item Indent":"32","Start Hidden":"false"}},
 {"name":"YR_LoadCallCE","status":true,"description":"Allows to call a common event when loading game.","parameters":{"Common Event":"2"}}
 ];
