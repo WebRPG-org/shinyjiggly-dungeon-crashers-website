@@ -239,9 +239,6 @@ Shaking Text
 Timed Attack Core
 CE Battle Intro
 
-Mac15001900:
-Run Nearby Event
-
 nz_prism:
 CustomLogo
 
@@ -278,7 +275,6 @@ Large Sprite Fix (ft. Shaz)
 Star Passability Fix
 
 Hime:
-Save Title
 Large Choices
 Hidden Choice Conditions
 Game Over Events
@@ -291,13 +287,13 @@ Yami:
 8dir Movement
 
 Fallen Angel Olivia:
-Meta Controls
+Meta Controls (cross-savefile global switches and variables)
 
 Atreyo Ray:
 Title Command- Exit
 
 Jeneeus Guruman:
-Change Graphic
+Change Graphic (actor graphic change connected to equips)
 
 Shaz:
 Looping Animations
@@ -311,6 +307,10 @@ No item categories
 Unagi Ootoro:
 Smooth Camera
 
+orochii:
+save file arbitrary text (web friendly)
+
 Alpha testers--
 frozenLake
 deftlyInscruitable
+Skye M.
