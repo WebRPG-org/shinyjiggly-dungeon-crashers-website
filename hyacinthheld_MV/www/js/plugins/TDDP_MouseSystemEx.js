@@ -3,11 +3,11 @@
 //=============================================================================
 
 var Imported = Imported || {};
-Imported.TDDP_MouseSystemEx = "1.8.2";
+Imported.TDDP_MouseSystemEx = "1.8.2.1";
 
 //=============================================================================
 /*:
- * @plugindesc 1.8.2 Custom mouse cursors, highlight menu items on hover, custom event mouse interaction and much more! See Help.                      id:TDDP_MouseSystemEx
+ * @plugindesc 1.8.2.1 Custom mouse cursors, highlight menu items on hover, custom event mouse interaction and much more! See Help.                      id:TDDP_MouseSystemEx
  *
  * @author Tor Damian Design / Galenmereth
  *
@@ -217,230 +217,31 @@ Imported.TDDP_MouseSystemEx = "1.8.2";
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Terms & Conditions
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * This plugin is free for both non-commercial and commercial use. Please see
- * http://mvplugins.tordamian.com/terms-of-use for the full terms of use.
- *
+ * In short: Completely free, including for commercial use.
  * A big thank you to Degica for making this plugin free for commercial use for
  * everyone!
- */
- /*:ja
- * @plugindesc ver 1.8.2 マウスカーソルのカスタム、メニューアイテムの
- * ハイライトなどを行います。詳しくはHelpをご覧ください。
  *
- * @author Tor Damian Design / Galenmereth
+ * MIT License
  *
- * @param ---Custom Cursor---
- * @desc カーソルをカスタムするオプションです。(見出しのため変更不要)
- * @default
+ * Copyright (c) 2019 Tor Damian Design
  *
- * @param Use Custom Cursor?
- * @desc カスタムマウスカーソル画像を利用するかどうか選択します。
- * true => ON       false => OFF
- * @default false
- *
- * @param Custom Cursor Image
- * @desc カスタムカーソルのファイル名です。プロジェクト内のカスタムカーソルフォルダで、このファイル名を探します。
- * @default default.png
- *
- * @param Custom Cursors Folder
- * @desc カスタムカーソルを入れておきたいフォルダです。「/」で終わるように設定してください。デフォルト設定: img/cursors/
- * @default img/cursors/
- *
- * @param ---Auto Change Cursors---
- * @desc イベントのマウスオーバー時に、自動的にカーソルを変更するオプションです。(見出しのため変更不要)
- * @default
- *
- * @param Show Text Cursor
- * @desc Show Textのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Transfer Cursor
- * @desc Transfer Playerのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Change Gold Cursor
- * @desc Change Goldのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Change Items Cursor
- * @desc Change Itemsのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Change Weapons Cursor
- * @desc Change Weaponsのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Change Armors Cursor
- * @desc Change Armorsのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param Battle Processing Cursor
- * @desc Battle Processingのコマンドを含むイベントにマウスオーバーした際、このカスタムカーソル画像を表示します。
- *
- * @param ---Auto Change Icons---
- * @desc イベントのマウスオーバー時に、自動的にアイコンを表示するオプションです。(見出しのため変更不要)
- * @default
- *
- * @param Show Text Icon
- * @desc Show Textのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Transfer Icon
- * @desc Transfer Playerのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Change Gold Icon
- * @desc Change Goldのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Change Items Icon
- * @desc Change Itemsのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Change Weapons Icon
- * @desc Change Weaponsのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Change Armors Icon
- * @desc Change Armorsのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param Battle Processing Icon
- * @desc Battle Processingのコマンドを含むイベントにマウスオーバーした際、このアイコンを表示します。
- *
- * @param ---Hover Select---
- * @desc マウス移動時のエフェクトを設定するオプションです。(見出しのため変更不要)
- * @default
- *
- * @param Highlight On Hover
- * @desc マウスオーバー時にメニューアイテムをハイライトします。
- * true => ON       false => OFF
- * @default false
- *
- * @param Hover SE Cooldown
- * @desc Highlight On HoverがONになっている状態で、オーディオの音量を下げます。デフォルト値=4
- * @default 4
- *
- * @param ---Customizeable Notetags---
- * @desc プレイヤーキャラクターの行動によってではなく、マウスインタラクションによってイベントを発動させるオプションです。
- * @default
- *
- * @param No Auto Cursor Notetag
- * @desc イベントもしくはイベントページ上で、オートカーソルスイッチを無効化するnotetagです。
- * @default no_auto_cursor!
- *
- * @param No Auto Icon Notetag
- * @desc イベントもしくはイベントページ上で、オートアイコンスイッチを無効化するnotetagです。
- * @default no_auto_icon!
- *
- * @param Click Notetag
- * @desc クリック時にイベントを発動させるnotetagです。
- * Default: click_activate!
- * @default click_activate!
- *
- * @param Hover Notetag
- * @desc マウスオ―バー時にイベントを発動させるnotetagです。
- * Default: hover_activate!
- * @default hover_activate!
- *
- * @param Leave Notetag
- * @desc マウスが離れた時にイベントを発動させるnotetagです。
- * Default: leave_activate!
- * @default leave_activate!
- *
- * @param ---Mouse Icons---
- * @desc マウスアイコンにまつわるオプションです。(見出しのため変更不要)
- * @default
- *
- * @param Hide Cursor
- * @desc アイコン表示時に、デフォルトのマウスカーソルを隠すオプションです。
- * true => ON       false => OFF
- * @default false
- *
- * @param Icon Offset X
- * @desc マウスからアイコンの距離を設定します。(X軸)
- * Default: 9
- * @default 9
- *
- * @param Icon Offset Y
- * @desc マウスからアイコンの距離を設定します。(Y軸)
- * Default: 14
- * @default 14
- *
- * @param ---Mouse Icon Tags---
- * @desc マウスアイコンにまつわるタグです。(見出しのため変更不要)
- * @default
- *
- * @param Icon Tag 1
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default quest: 191
- *
- * @param Icon Tag 2
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default chest: 210
- *
- * @param Icon Tag 3
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default door: 106
- *
- * @param Icon Tag 4
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default world_map: 190
- *
- * @param Icon Tag 5
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default potion: 176
- *
- * @param Icon Tag 6
- * @desc Mouse Hover Iconsnotetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default poison: 177
- *
- * @param Icon Tag 7
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default four_leaf_clover: 182
- *
- * @param Icon Tag 8
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default notebook: 187
- *
- * @param Icon Tag 9
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default letter: 192
- *
- * @param Icon Tag 10
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @param Icon Tag 11
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @param Icon Tag 12
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @param Icon Tag 13
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @param Icon Tag 14
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @param Icon Tag 15
- * @desc Mouse Hover Icons notetagと合わせて使用するため、アイコンタグのショートカットを設定します。
- * @default key: 195
- *
- * @help =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
- * Information
- * =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
- * TDDP - MouseSystemは、ゲーム内でのマウスを用いた
- * 様々なアクションを可能にするプラグインです。
- * マウスカーソル自体のカスタマイズや、イベントマウスオーバー時のアイコン表示、
- * マウスでのイベントの発動などを行なうことができます。
- *
- * アップデートと簡易使用方法については、
- * こちらのプラグインのサイトを参照してください。
- * http://mvplugins.tordamian.com/?p=26
- * このサイトでは、オフラインで使用するためのPDFをダウンロードすることができます。
- * またいつでも最新版の確認を行なうことができます。
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Terms & Conditions
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * このプラグインは、商用利用・非商用利用どちらにもフリーで公開されています。
- * 使用方法の全文についてはこちらのサイトを確認してください。
- * http://mvplugins.tordamian.com/terms-of-use
- *
- * 最後に、このプラグインのフリーでの商用利用を実現してくれた
- * Degicaさんに感謝の意を表します。
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 //=============================================================================
 // All anonymous/helper functions are registered on this object for the convenience of other plugins.
@@ -561,12 +362,19 @@ var TDDP_MouseSystemEx = {};
     $._precacheCustomCursors = function() {
         if (StorageManager.isLocalMode() && Utils.isOptionValid('test')) {
             var fs = require('fs');
+            var path;
             // Find that relative local path, using MV's own methods
-            var path = window.location.pathname.replace(/\/[^\/]*$/, '/' + this.customCursorPath);
-            if (path.match(/^\/([A-Z]\:)/)) {
-                path = path.slice(1);
+            if (Utils.RPGMAKER_VERSION >= '1.6.0') {
+                var path_js = require('path');
+                path = path_js.join(path_js.dirname(process.mainModule.filename), this.customCursorPath);
             }
-            path = decodeURIComponent(path);
+            else {
+                path = window.location.pathname.replace(/\/[^\/]*$/, '/' + this.customCursorPath);
+                if (path.match(/^\/([A-Z]\:)/)) {
+                    path = path.slice(1);
+                }
+                path = decodeURIComponent(path);
+            }
             // Check if cursors dir exists, make if not
             if (!fs.existsSync(path)) {
                 alert('TDDP MouseSystemEx\nThe chosen cursor folder "' + this.customCursorPath + '" has been created for you. Please put any custom cursor image files in this folder.');

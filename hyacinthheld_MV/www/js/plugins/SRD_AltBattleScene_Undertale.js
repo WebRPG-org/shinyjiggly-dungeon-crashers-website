@@ -180,7 +180,7 @@ _.loadImage = function(filename, hue) {
 
 _.preloadImages = function() {
 	for(var i = 1; i <= 4; i++) {
-		_.loadImage("Command " + i);
+		_.loadImage("Command" + i);
 	}
 };
 
@@ -645,7 +645,7 @@ Window_ActorCommand.prototype.drawItem = function(index) {
 		var rect = this.itemRectForText(index);
 		var align = this.itemTextAlign();
 		if(this._spriteChoices[index]) this.removeChild(this._spriteChoices[index]);
-		var imageName = String("Command " + (index+1));
+		var imageName = String("Command" + (index+1));
 		var bit = _.loadImage(imageName);
 		var sprite = new Sprite_PictureChoice(bit);
 		sprite.x = rect.x + (rect.width/2) + (this.textPadding()*2);
