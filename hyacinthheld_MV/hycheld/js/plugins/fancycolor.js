@@ -62,16 +62,16 @@ switch(ass) {
     specialcolor.style.backgroundImage = "none";
     break;
   case 1:
-    specialcolor.style.backgroundImage = "url('../img/parallaxes/theabyss.png')";
+    specialcolor.style.backgroundImage = "url('/img/parallaxes/theabyss.png')";
     break;
   case 2:
-    specialcolor.style.backgroundImage = "url('../img/parallaxes/ultraspaceloop.png')";
+    specialcolor.style.backgroundImage = "url('./img/parallaxes/ultraspaceloop.png')";
     break;
   case 3:
 	specialcolor.style.backgroundImage = "url('../img/parallaxes/StarlitSky.png')";
    break;  
   case 4:
-	specialcolor.style.backgroundImage = "url('../img/parallaxes/fadetowhite.gif')";
+	specialcolor.style.backgroundImage = "url('/img/parallaxes/fadetowhite.gif')";
    break;
   default:
     specialcolor.style.backgroundImage = "none";

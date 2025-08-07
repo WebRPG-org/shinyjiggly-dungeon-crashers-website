@@ -46,6 +46,5 @@
         this.fadeOutAll();
         SceneManager.exit();
     };
-updateBackgroundDivColor(0, 0, 0);
-specialcolor.style.backgroundImage = "none";
+
 })();
