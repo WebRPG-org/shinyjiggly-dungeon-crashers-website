@@ -311,7 +311,7 @@ Scene_Battle.prototype.createAllWindows = function() {
 	this.addWindow(this._messageWindow);
 
 	this._partyCommandWindow.x = 0;
-	this._actorCommandWindow.x = 0;
+	this._actorCommandWindow.x = 0; //EDIT
 	this._statusWindow.y = Graphics.boxHeight - this._actorCommandWindow.height - this._statusWindow.height;
 	this._messageBox.y = this._statusWindow.y - this._messageBox.height;
 	this._enemyWindow.x = this._messageBox.x;
@@ -592,12 +592,12 @@ Window_ActorCommand.prototype._refreshCursor = function() {
 	if(_.animate) {
 		if(!this._windowCursorSprite._xAniOff) this._windowCursorSprite._xAniOff = 0;
 		this._windowCursorSprite.bitmap = bitmap;
-		this._windowCursorSprite.move(x2 + _.xActorOffset, y2 + _.yActorOffset);
-		this._windowCursorSprite._xOriSpot = x2 + _.xActorOffset;
-		this._windowCursorSprite._yOriSpot = y2 + _.yActorOffset;
+		this._windowCursorSprite.move(x2 + _.xActorOffset + 16, y2 + _.yActorOffset); //edit
+		this._windowCursorSprite._xOriSpot = x2 + _.xActorOffset ;
+		this._windowCursorSprite._yOriSpot = y2 + _.yActorOffset ;
 	} else {
 		this._windowCursorSprite.bitmap = bitmap;
-		this._windowCursorSprite.move(x2 + _.xActorOffset, y2 + _.yActorOffset);
+		this._windowCursorSprite.move(x2 + _.xActorOffset + 16, y2 + _.yActorOffset); //edit
 	}
 };
 
@@ -648,8 +648,8 @@ Window_ActorCommand.prototype.drawItem = function(index) {
 		var imageName = String("Command" + (index+1));
 		var bit = _.loadImage(imageName);
 		var sprite = new Sprite_PictureChoice(bit);
-		sprite.x = rect.x + (rect.width/2) + (this.textPadding()*2);
-		sprite.y = rect.y + (rect.height) - this.textPadding();
+		sprite.x = rect.x + (rect.width/2) + (this.textPadding()*2)-48; //edit
+		sprite.y = rect.y + (rect.height) - this.textPadding()+32;
 		this._spriteChoices[index] = sprite;
 		this.addChildToBack(sprite);
 	} else {

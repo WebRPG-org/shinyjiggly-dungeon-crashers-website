@@ -822,8 +822,9 @@ Window_Base.prototype.partyNickname = function(n) {
 };
 
 Window_Base.prototype.escapeIconItem = function(n, database) {
-    return '\x1bI[' + database[n].iconIndex + ']' + database[n].name;
-};
+	
+    return '\x1bI[' + database[n].iconIndex + '] \x1bC[6]' + database[n].name + '\x1bC[0]';
+}; //added color coding
 
 Window_Base.prototype.obtainEscapeString = function(textState) {
     var arr = /^\<(.*?)\>/.exec(textState.text.slice(textState.index));
