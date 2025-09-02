@@ -1,0 +1,223 @@
+----------------------
+Style guide for transferring discord RP messages to RPG Maker MV for HyacinthHeld
+-----------------------
+-- Raw Text Format primer --
+
+HyacinthHeld's dialogue is often derived from RP logs when relevant and possible to do so.
+
+When you copypaste a log section into notepad, it will look like this:
+- - - - - - - - 
+Shade Skaiason 		<== name
+APP			<== shows up if a tupper was used
+ — 8/29/2025 2:28 AM 	<== date sent
+She's bouncing around the room! <== an action
+"So who was that Hyacinth?"	<== a message
+- - - - - - - - - -
+Obviously, this will need to be processed in order to be used in-game. Most of the information will not be in the message.
+The name will likely serve as a reference, as name tags are not used in this game. Obviously omit the name tag and any tupper use indicator, and the date.
+
+When it comes to actions, if you're just doing quick transfer, you may put the action text in a Comment, which turns it green and does not have any effect upon gameplay. At this point, it can be referenced later on as stage directions.
+
+If deemed appropriate, the action can be translated into a move event, shown in narration, or otherwise handled through event commands. If you're not up to it though, you can just stick to the comment option and just request a second pass.
+--------------------
+For the actual message messages, Remember to remove the surrounding quotes! Those are in the RP messages for the sake of readabilibty reasons alongside actions (and other things) and are not used in HycHeld's message style. 
+All other usages of quotes are kept in however, so don't use a mass replace, it WILL break something.
+
+messages with a Big Dot on the side are interpreted as narrator messages. This is the format used for narrated messages:
+- - - - - - - - - -
+ * lorem ipsum blablabla
+more stuff here
+- - - - - - - - - -
+Note that there is a space before and after the star here. Also, this star thingie is only used for narration, and there's only one per message box. Any lines after the first in a message box have no indent. Don't expect for facepics to be used when a narration dot is in use.
+
+----------------------------------------
+This is roughly what a formatted message will look like:
+
+◆Plugin Command：MessageSE Samm	<== what flavor of text bips
+◆Text：yoooo(5), Window, Top		<== the facepic used, what type of window, and the window position
+：    ：Im sorry Ive been so sparse...\!	<== the actual message
+：    ：Ive been having some troubles pile up. 
+：    ：eheheh... but I havent forgotten about you.
+
+Each character has their own text bip. This should be applied at the beginning of a new speaker, or at the beginning of an event.
+Here's the names of the text bip options and known users of them:
+----------------
+Default
+-used when no others apply. use this if in doubt. Almost always used for the narrator unless it's specifically a non-LS narrator (like that one time Skye makes a narration comment)
+Typewriter
+- uhhh... not sure where this one is used, it was already there when I added the plugin
+Dylan
+- used for Dylan (of course). Pane does NOT use this, he uses notdylan
+Hyc
+- used for Hyacinth, Larkspur, Doomed Hyc, and various modern versions of Rise
+Fallen
+- used for younger Rise varients, and those who may just have a slightly higher pitched version of Rise's voice
+LA
+- used for characters from Link's Awakening
+Thoren
+- used for varients of Thoren and those who may just have a slightly lower pitched version of Rise's voice
+Grinner
+- used for Grinner (earm?)
+Shot
+- used for Master Shot (opp!)
+Gustav
+- used for Gustav (egh!)
+Glo
+- used for Aglowne
+Sponge
+- used for various versions of Katie
+Squeak
+- used for those that have a squeaky voice, such as various consorts and mice
+Skye
+- used for various versions of Skye and Skitis
+Leta
+- used for Leta
+Samm
+- used for various versions of Samm, including Red
+FL
+- used for Charles and those with his voice
+Cedric
+- used for Cedric
+notdylan
+- used for impersonations of Dylan, as well as Pane
+Amanda
+- used for Amanda Marshmallow
+Nick
+- used for on-screen appearences of LS, is not used for newsletters or narration, Default is used instead
+-------------------------
+When it comes to facepics, most who have their own voice usually have at least one facepic. If they don't have one, then the facepic is omitted. Some have multiple emote variations of their facepic. 
+No, you cannot swap in the middle of a message. if you do need to, just split the message roughly where the expression changes.
+---------------------------------------
+-- Window Background Type --
+
+There are three types of window backgrounds: Window (the usual one with the border), Dim (translucent black fuzzy), and None.
+
+in normal gameplay, the regular window is used for most messages, and is almost always used for narrator messages. During cutscenes with full window images, the dim option is used for increased readability.
+When the screen is fully black, the none option can be used. Note that window option can still be used in black screen cases!
+
+Another use case for None is when a custom picture based background is used, such as the Perfectly Generic Sign or the longform mode journal page.
+------------------------------
+-- Window Positioning --
+
+There are three options for positioning: Top, Center, and Bottom.
+
+Window position should default to bottom for most messages, but should move to top if the subject sould be covered by the box (unless its literally Part Of The Joke to be covered by the textbox)
+if both subjects have no textbox in a conversation (due to using a full window image or otherwise not having a facepic), their window positions should ideally alternate to make it clear when the subject changes.
+Center position is only used in rare occasions, such as when the screen is black (add the other cases for use here!). Note that sometimes top or bottom is still used in black screen cases!
+----------------------
+-- Message formatting/editing --
+
+When it comes to editing, it's a bit of a balance between clean-up and quirk preservation. As a rule, narration uses perfect grammar and proper caps. Professional/formal sounding characters tend to lean towards this gold standardas well.
+Informal sounding characters may be somewhat lax on caps, punctuation, and sometimes even spelling and grammar. Play it to taste.
+
+When it comes to the question of "when to hit new line", try to make it get close to the edge, but not over. The line in the editor usually helps, but can be inaccurate when Control Characters are used. 
+Try not to make it look too awkward when the message wraps over in terms of phrase completion (don't cut off in the middle if possible, opt to hit new line between ideas), line balance (avoid having only one word on a new line, make the previous line a little shorter to put more on the next line if it makes it more aesthetically pleasing), and retention of meaning (if a term is negated or modified extensively by a word near it, don't cut it off by new line, make those words a package deal). 
+
+Sometimes a sentence will be very long and not fit on a single four-line message box. Follow the awkwardness prevention protocols above in those cases too-- phrase retention, line balance, and meaning retention become even more important when you're suddenly moving on to another message box and getting rid of the old one!
+
+I highly suggest using this tool in MV mode when editing material for a message: 
+
+https://elsemieni.net/rpgmaker/msgtool/
+
+This will save your ass.
+-----------------------------------------
+Here's a list of in-line text codes that can be used, pulled from YEP:
+
+Text Code   Function
+  \V[n]       Replaced by the value of the nth variable.
+- this is most likely to be used during minigames, probably won't be used very often
+  \N[n]       Replaced by the name of the nth actor.
+- this is sometimes used to refer to pane to compactify the "spoiler code" (pane is vaguely anonymized until his reveal, this reveal is also saved in meta-memory, so second playthroughs done after the reveal also make him show up)
+  \P[n]       Replaced by the name of the nth party member.
+- likely to be used if there's a part where your party composition can be customized, not likely to come up (probably)
+  \G          Replaced by the currency unit.
+- when talking about monies, hasn't been used and probably won't be used. The currency is called friendcoins.
+  \C[n]       Draw the subsequent text in the nth color.
+- used often, refer below to the color guide
+  \I[n]       Draw the nth icon.
+- if you right click, you can also view the icon sheet, with the index of the currently selected icon! This is a useful reference if you want to display an icon in a text box, such as for emojis and the like.
+  \{          Increases the text size by one step.
+- used for big yelling, The Archives, and big name titles
+  \}          Decreases the text size by one step.
+- used for resetting text size after big text, and things in tiny text (discord markdown has a tiny text option)
+  \\          Replaced with the backslash character.
+- not sure when you'll need to display a backslash, but it's there.
+  \$          Opens the gold window.
+- best used for when given a chance to buy a thing
+  \.          Waits 1/4th seconds.
+- a short pause
+  \|          Waits 1 second.
+- a longer pause. most of these types of pauses aren't used because they can be skipped over easily
+  \!          Waits for button input.
+- this is used relatively often, usually where one would often put a long pause, usually in between two different sentences. If it's a memo chat log, one of these usually goes between different posters on the same textbox.
+  \>          Display remaining text on same line all at once.
+  \<          Cancel the effect that displays text all at once.
+- these two are used in combination. This is for stuff like that MOTD bit in the odd squad memo.
+  \^          Do not wait for input after displaying text
+- closes the textbox. best used with a few long waits so the player still gets a moment to read the thing. also useful for interrupts and carefully timed cutscenes.
+  \w[x]     - Waits x frames (60 frames = 1 second). Message window only.
+- this isn't used but you can use it if you don't wanna use the old school long and short pauses when necessary
+----------
+Note: as of writing, the shakes and waves do not use text bips when active. use this sparingly
+
+\Shake                         -  Sets text to default shaking values
+\Shake<power>                  -  Creates a shake effect from simple number 
+\Shake<xSpd, ySpd>             -  Creates shake from seperate x and y speeds
+\Shake<xSpd, ySpd, xMax, yMax> -  Gives absolute control over shaking effect; can control 
+			x/y speed, along with the maximum distance the characters 
+			can travel before reversing.
+- shaking text is best used for when the speaker is scared
+
+\Wave                          -  Sets wave effect based off of default 
+                                  wave values
+\Wave<speed, max>              -  Sets wave effect based off of speed and 
+                                  max distance the characters can travel
+- wavy text is sometimes used for a mocking tone, sometimes for a melodic tone
+
+\ResetShake                    -  Resets all shaking
+----------
+\F - pagebreaks when the longform mode switch is ON
+
+Another thing I just found out, when Show Text is open, you can hit F1 and get the help text for all the plugins in a neat little selectable list format, which is REALLY helpful. 
+
+F2 shows a preview of the text box, albeit very inaccurately, as it doesn't respond to background settings and uses the default font. Fortunately, TYPOSTUCK has very similar cutoff points, so this preview should still work for figuring out when a word will be cut off the edge of the textbox.
+Remember that you get less room when you add a facepic!
+---
+Very important note, always use the YEP_MessageCore itemnames format when referencing items by name. This will also auto-color the name of the item that shows up next to the icon. 
+Refer below for that format stuff:
+
+ Icon Names: Effect:
+   \ii[x]    - Writes out item x's name including icon.
+   \iw[x]    - Writes out weapon x's name including icon.
+   \ia[x]    - Writes out armour x's name including icon.
+   \is[x]    - Writes out skill x's name including icon.
+   \it[x]    - Writes out state x's name including icon.
+
+Make sure to check the database for the indexes needed for these!
+-----------------------
+Color Guide
+
+Here is a list of the various colors used:
+\c[0] plain text, narration
+\c[1] Dylan, Pane, other instances of #1, figures of violence
+\c[2] General important stuff, names and places of note
+\c[3] SBURB, GREEN SUN, etc
+\c[4] Skaia
+\c[5] Derse
+\c[6] Prospit, pacifism, Light aspect, Brae
+\c[7] The furthest Ring, voidspawn
+\c[8] VIC, Gray/Grey
+\c[9] void aspect, VoidCo.
+\c[10] heart aspect, soul related stuff 
+(unless you're talking about the soul of someone with a defined personal color. then use that instead)
+\c[11] slightly darker green, that one guy from the RWU
+\c[12] mid blue, Charles
+\c[13] Hyacinth
+\c[14] darker yellow, CS
+\c[15] Horrorterrors, elder gods, various other ominous things like that
+\c[18] Skye, Katie, Time aspect, bright red
+\c[27] LS
+(everything beyond that is unassigned or unknown)
+
+Note that names and references to particular characters is almost always in their personal color! 
+If there is no personal color, use color 2 by default.
