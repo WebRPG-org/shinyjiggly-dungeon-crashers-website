@@ -2011,7 +2011,7 @@ Sprite_Timer.prototype.initialize = function() {
 
 Sprite_Timer.prototype.createBitmap = function() {
     this.bitmap = new Bitmap(96, 48);
-    this.bitmap.fontSize = 32;
+    this.bitmap.fontSize = 40;
 };
 
 Sprite_Timer.prototype.update = function() {
@@ -2043,7 +2043,7 @@ Sprite_Timer.prototype.timerText = function() {
 };
 
 Sprite_Timer.prototype.updatePosition = function() {
-    this.x = Graphics.width - this.bitmap.width;
+    this.x = Graphics.width / 2; //Graphics.width - this.bitmap.width; EDIT
     this.y = 0;
 };
 

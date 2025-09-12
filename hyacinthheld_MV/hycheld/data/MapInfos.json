@@ -13,7 +13,7 @@ null,
 {"id":11,"expanded":true,"name":"Exec Office","order":18,"parentId":10,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":12,"expanded":false,"name":"break room","order":20,"parentId":8,"scrollX":819,"scrollY":448},
 {"id":13,"expanded":false,"name":"chao hallway","order":15,"parentId":9,"scrollX":1092,"scrollY":621.3333333333334},
-{"id":14,"expanded":true,"name":"Dream Cabin","order":23,"parentId":0,"scrollX":1092,"scrollY":621.3333333333334},
+{"id":14,"expanded":true,"name":"Dream Cabin","order":23,"parentId":0,"scrollX":819,"scrollY":466},
 {"id":15,"expanded":true,"name":"genesgarden","order":24,"parentId":14,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":16,"expanded":false,"name":"larkcutscene","order":25,"parentId":15,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":17,"expanded":false,"name":"elevator","order":26,"parentId":15,"scrollX":1092,"scrollY":621.3333333333334},
@@ -54,5 +54,5 @@ null,
 {"id":52,"expanded":false,"name":"startup","order":9,"parentId":7,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":53,"expanded":true,"name":"Exec Office-intro","order":11,"parentId":51,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":54,"expanded":false,"name":"my house","order":12,"parentId":4,"scrollX":811,"scrollY":621},
-{"id":55,"expanded":false,"name":"knife game","order":27,"parentId":14,"scrollX":1092,"scrollY":621.3333333333334}
+{"id":55,"expanded":false,"name":"knife game","order":27,"parentId":14,"scrollX":819,"scrollY":466}
 ]
