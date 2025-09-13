@@ -206,16 +206,17 @@ Here is a list of the various colors used:
 \c[5] Derse
 \c[6] Prospit, pacifism, Light aspect, Brae
 \c[7] The furthest Ring, voidspawn
-\c[8] VIC, Gray/Grey
+\c[8] VIC, Gray/Grey, TS
 \c[9] void aspect, VoidCo.
 \c[10] heart aspect, soul related stuff 
 (unless you're talking about the soul of someone with a defined personal color. then use that instead)
 \c[11] slightly darker green, that one guy from the RWU
 \c[12] mid blue, Charles
 \c[13] Hyacinth
-\c[14] darker yellow, CS
+\c[14] darker yellow, Enker
 \c[15] Horrorterrors, elder gods, various other ominous things like that
 \c[18] Skye, Katie, Time aspect, bright red
+\c[21] darkerer yellow, CS
 \c[27] LS
 (everything beyond that is unassigned or unknown)
 
