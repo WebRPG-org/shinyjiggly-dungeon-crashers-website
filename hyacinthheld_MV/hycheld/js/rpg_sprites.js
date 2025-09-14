@@ -2043,8 +2043,8 @@ Sprite_Timer.prototype.timerText = function() {
 };
 
 Sprite_Timer.prototype.updatePosition = function() {
-    this.x = Graphics.width / 2; //Graphics.width - this.bitmap.width; EDIT
-    this.y = 0;
+    this.x = Graphics.width / 2 - 50; //Graphics.width - this.bitmap.width; EDIT
+    this.y = 4;
 };
 
 Sprite_Timer.prototype.updateVisibility = function() {

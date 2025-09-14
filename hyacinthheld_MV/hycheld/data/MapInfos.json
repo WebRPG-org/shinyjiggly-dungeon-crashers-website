@@ -54,5 +54,5 @@ null,
 {"id":52,"expanded":false,"name":"startup","order":9,"parentId":7,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":53,"expanded":true,"name":"Exec Office-intro","order":11,"parentId":51,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":54,"expanded":false,"name":"my house","order":12,"parentId":4,"scrollX":811,"scrollY":621},
-{"id":55,"expanded":false,"name":"knife game","order":27,"parentId":14,"scrollX":819,"scrollY":466}
+{"id":55,"expanded":false,"name":"knife game","order":27,"parentId":14,"scrollX":819,"scrollY":448}
 ]
