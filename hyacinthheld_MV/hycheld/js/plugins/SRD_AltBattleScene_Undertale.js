@@ -488,7 +488,7 @@ Window_BattleStatus.prototype.drawActorHp = function(actor, x, y, width) {
 	var color2 = this.hpGaugeColor2();
 	this.contents.fontSize -= 4;
 	this.drawGauge(x + this.textWidth(TextManager.hpA) + 12, y, width, actor.hpRate(), color1, color2);
-	this.drawText(TextManager.hpA, x, y, 44);
+	this.drawText(TextManager.hpA , x, y, 44);
 	this.contents.fontSize += 4;
 };
 
@@ -504,7 +504,9 @@ Window_BattleStatus.prototype.drawItem = function(index) {
 	var rect = this.basicAreaRect(index);
 	var rect2 = this.gaugeAreaRect(index);
 	var levelOffset = 120;
-	this.drawActorName(actor, rect.x + 0, rect.y, levelOffset);
+	//this.drawText(actor.equips, rect.x , rect.y, rect.width + 56); // save for FUN later
+	//Window_EquipSlot.drawItemName(actor.equips()[2], rect.x + 138, rect.y); //doesn't work
+	this.drawActorName( actor, rect.x + 0, rect.y, levelOffset); 
 	this.drawText("LV " + actor.level, rect.x + levelOffset + 6, rect.y, rect.width - 156);
 	this.drawActorHp(actor, rect.x + levelOffset*2 + 6, rect2.y, 100);
 	this.drawCurrentAndMax(actor.hp, actor.mhp, rect.x + levelOffset*2 + 6 + this.textWidth(TextManager.hpA) + 12, rect2.y, 200, 
