@@ -505,9 +505,18 @@ Window_BattleStatus.prototype.drawItem = function(index) {
 	var rect2 = this.gaugeAreaRect(index);
 	var levelOffset = 120;
 	//this.drawText(actor.equips, rect.x , rect.y, rect.width + 56); // save for FUN later
+	if (actor.equips()[2] !== null) {
+	var iconn = actor.equips()[2].iconIndex; //bullshit here
+	}
+	else { 
+	var iconn = 0;
+	}
+	this.drawIcon(iconn, rect.x, rect.y-2);
+	console.log(iconn);
+	
 	//Window_EquipSlot.drawItemName(actor.equips()[2], rect.x + 138, rect.y); //doesn't work
-	this.drawActorName( actor, rect.x + 0, rect.y, levelOffset); 
-	this.drawText("LV " + actor.level, rect.x + levelOffset + 6, rect.y, rect.width - 156);
+	this.drawActorName( actor, rect.x + 15, rect.y, levelOffset); 
+	this.drawText("LV " + actor.level, rect.x + levelOffset + 20, rect.y, rect.width - 156);
 	this.drawActorHp(actor, rect.x + levelOffset*2 + 6, rect2.y, 100);
 	this.drawCurrentAndMax(actor.hp, actor.mhp, rect.x + levelOffset*2 + 6 + this.textWidth(TextManager.hpA) + 12, rect2.y, 200, 
 		this.hpColor(actor), this.normalColor());
