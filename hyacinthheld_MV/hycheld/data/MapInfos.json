@@ -56,5 +56,5 @@ null,
 {"id":54,"expanded":false,"name":"my house","order":12,"parentId":4,"scrollX":811,"scrollY":621},
 {"id":55,"expanded":false,"name":"knife game","order":27,"parentId":14,"scrollX":819,"scrollY":466},
 {"id":56,"expanded":true,"name":"reminice room","order":54,"parentId":50,"scrollX":982.8,"scrollY":549.6},
-{"id":57,"expanded":false,"name":"statue room","order":55,"parentId":56,"scrollX":973.1999999999999,"scrollY":598.8}
+{"id":57,"expanded":false,"name":"statue room","order":55,"parentId":56,"scrollX":973.1999999999999,"scrollY":838.8}
 ]
