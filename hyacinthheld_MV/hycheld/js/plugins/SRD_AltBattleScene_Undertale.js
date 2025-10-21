@@ -483,7 +483,7 @@ Window_BattleStatus.prototype.maxItems = function() {
 };
 
 Window_BattleStatus.prototype.drawActorHp = function(actor, x, y, width) {
-	width = width || 186;
+	width = width || 100;
 	var color1 = this.hpGaugeColor1();
 	var color2 = this.hpGaugeColor2();
 	this.contents.fontSize -= 4;
@@ -491,35 +491,48 @@ Window_BattleStatus.prototype.drawActorHp = function(actor, x, y, width) {
 	this.drawText(TextManager.hpA , x, y, 44);
 	this.contents.fontSize += 4;
 };
+//EDIT new thing: adds an MP bar!
+Window_BattleStatus.prototype.drawActorMp = function(actor, x, y, width) {
+	width = width || 100;
+	var color1 = this.hpGaugeColor1();
+	var color2 = this.hpGaugeColor2();
+	this.contents.fontSize -= 4;
+	this.drawGauge(x + this.textWidth(TextManager.mpA) + 12, y, width, actor.mpRate(), color1, color2);
+	this.drawText(TextManager.mpA , x, y, 44);
+	this.contents.fontSize += 4;
+};
 
 Window_BattleStatus.prototype.drawGauge = function(x, y, width, rate, color1, color2) {
 	var fillW = Math.floor(width * rate);
 	var gaugeY = y + this.lineHeight() - 24;
-	this.contents.fillRect(x, gaugeY, width, 20, this.gaugeBackColor());
-	this.contents.gradientFillRect(x, gaugeY, fillW, 20, color1, color2);
+	this.contents.fillRect(x, gaugeY, width, 15, this.gaugeBackColor()); //EDIT was 20
+	this.contents.gradientFillRect(x, gaugeY, fillW, 15, color1, color2);
 };
 
 Window_BattleStatus.prototype.drawItem = function(index) {
 	var actor = $gameParty.battleMembers()[index];
 	var rect = this.basicAreaRect(index);
 	var rect2 = this.gaugeAreaRect(index);
-	var levelOffset = 120;
+	var levelOffset = 100;
 	//this.drawText(actor.equips, rect.x , rect.y, rect.width + 56); // save for FUN later
 	if (actor.equips()[2] !== null) {
 	var iconn = actor.equips()[2].iconIndex; //bullshit here
 	}
 	else { 
-	var iconn = 0;
+	var iconn = 81;
 	}
 	this.drawIcon(iconn, rect.x, rect.y-2);
 	console.log(iconn);
 	
 	//Window_EquipSlot.drawItemName(actor.equips()[2], rect.x + 138, rect.y); //doesn't work
 	this.drawActorName( actor, rect.x + 15, rect.y, levelOffset); 
-	this.drawText("LV " + actor.level, rect.x + levelOffset + 20, rect.y, rect.width - 156);
-	this.drawActorHp(actor, rect.x + levelOffset*2 + 6, rect2.y, 100);
-	this.drawCurrentAndMax(actor.hp, actor.mhp, rect.x + levelOffset*2 + 6 + this.textWidth(TextManager.hpA) + 12, rect2.y, 200, 
+	this.drawText("LV " + actor.level, rect.x + levelOffset + 40, rect.y, rect.width - 156);
+	this.drawActorHp(actor, rect.x + levelOffset*2 + 6, rect2.y+2, 90); //position 90
+	this.drawCurrentAndMax(actor.hp, actor.mhp, rect.x + levelOffset*2 + 6 + this.textWidth(TextManager.hpA) + 12, rect2.y, 140, //position 145
 		this.hpColor(actor), this.normalColor());
+	this.drawActorMp(actor, rect.x + levelOffset*2 + 200, rect2.y+2, 90); // EDIT added mp!
+	this.drawCurrentAndMax(actor.mp, actor.mmp, rect.x + levelOffset*2 + 6 + this.textWidth(TextManager.mpA) + 12, rect2.y, 330, // EDIT added this too
+		this.mpColor(actor), this.normalColor());
 };
 
 Window_BattleStatus.prototype.hpGaugeColor1 = function() {
@@ -598,7 +611,7 @@ Window_ActorCommand.prototype._refreshCursor = function() {
 	var oy = y - y2;
 	var w2 = Math.min(w, this._width - pad - x2);
 	var h2 = Math.min(h, this._height - pad - y2);
-	var bitmap = _.loadImage("Heart-Cursor");
+	var bitmap = _.loadImage("");//("Heart-Cursor"); // EDIT You get nothing!!!
 
 	if(_.animate) {
 		if(!this._windowCursorSprite._xAniOff) this._windowCursorSprite._xAniOff = 0;
