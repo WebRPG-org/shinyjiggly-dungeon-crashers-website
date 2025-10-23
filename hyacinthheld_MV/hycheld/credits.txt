@@ -314,3 +314,10 @@ Alpha testers--
 frozenLake
 deftlyInscruitable
 Skye M.
+
+Special thanks--
+gimmer - code help
+coelocanth - code help
+orochii - code help
+Jenny_Azoth - ideological support
+destinysLie - moral support

@@ -112,6 +112,9 @@ Galv.CI.Scene_Boot_loadSystemImages = Scene_Boot.loadSystemImages;
 Scene_Boot.loadSystemImages = function() {
 	Galv.CI.Scene_Boot_loadSystemImages.call(this);
     ImageManager.loadSystem(Galv.CI.image);
+			for (const image of ["Heart", "chaoheart", "tealheart","flblueheart"]) {
+  ImageManager.loadSystem(image); // your cursors
+	}
 };
 
 
@@ -201,7 +204,7 @@ Sprite_GalvCursor.prototype.initialize = function(window) {
 	this._pattern = 0;
 	this.updateFrame();
 };
-
+/*
 Sprite_GalvCursor.prototype.createImage = function() {
 	this.bitmap = ImageManager.loadSystem(Galv.CI.image);
 	this._frameWidth = this.bitmap.width / Galv.CI.frames;
@@ -221,6 +224,34 @@ Sprite_GalvCursor.prototype.update = function() {
 	} else {
 		this.opacity = 0;
 	};
+};
+*/
+
+Sprite_GalvCursor.prototype.createImage = function() {
+    this._imageName = Galv.CI.image; // ADDED
+    this.bitmap = ImageManager.loadSystem(Galv.CI.image);
+    this._frameWidth = this.bitmap.width / Galv.CI.frames;
+    this._frameHeight = this.bitmap.height;
+    this._maxPattern = Galv.CI.frames - 1;
+    this._tickSpeed = Galv.CI.animSpeed;
+    this.anchor.y = 0.5;
+    this.opacity = 0;
+};
+
+Sprite_GalvCursor.prototype.update = function() {
+    Sprite_Base.prototype.update.call(this);
+    // START ADDED
+    if (this._imageName !== Galv.CI.image) {
+        this.createImage();
+    }
+    // END ADDED
+    if (this._window.isCursorVisible() && !$gameSystem._cursorHidden) {
+        this.opacity = this._window.openness >= 255 ? 255 : 0;
+        if (this._window.active) this.updateFrame();
+        this.updatePosition();
+    } else {
+        this.opacity = 0;
+    };
 };
 
 Sprite_GalvCursor.prototype.updateFrame = function() {

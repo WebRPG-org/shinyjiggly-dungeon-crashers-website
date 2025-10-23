@@ -138,7 +138,7 @@ _.cursor = function() {
 	var oy = y - y2;
 	var w2 = Math.min(w, this._width - pad - x2);
 	var h2 = Math.min(h, this._height - pad - y2);
-	var bitmap = _.loadImage("Heart-Cursor");
+	var bitmap = _.loadImage("");
 
 	if(_.animate) {
 		if(!this._windowCursorSprite._xAniOff) this._windowCursorSprite._xAniOff = 0;
@@ -181,6 +181,9 @@ _.loadImage = function(filename, hue) {
 _.preloadImages = function() {
 	for(var i = 1; i <= 4; i++) {
 		_.loadImage("Command" + i);
+}
+		for (const image of ["Heart", "chaoheart", "tealheart","flblueheart"]) {
+  ImageManager.loadSystem(image); // your cursors
 	}
 };
 
@@ -272,6 +275,7 @@ var _Scene_Boot_loadSystemImages = Scene_Boot.loadSystemImages;
 Scene_Boot.loadSystemImages = function() {
 	_Scene_Boot_loadSystemImages.apply(this, arguments);
 	_.preloadImages();
+
 };
 
 //-----------------------------------------------------------------------------
@@ -280,15 +284,16 @@ Scene_Boot.loadSystemImages = function() {
 
 Scene_Battle.prototype.commandAct = function() {
 	BattleManager.inputtingAction().setAct();
+	// you are picking the ACT option
 	this.selectEnemySelection();
 };
 
-Scene_Battle.prototype.startPartyCommandSelection = function() {
+Scene_Battle.prototype.startPartyCommandSelection = function() { // once per round
 	this.selectNextCommand();
 };
 
 var _Scene_Battle_createActorCommandWindow = Scene_Battle.prototype.createActorCommandWindow;
-Scene_Battle.prototype.createActorCommandWindow = function() {
+Scene_Battle.prototype.createActorCommandWindow = function() { // once per battle intro
 	_Scene_Battle_createActorCommandWindow.apply(this, arguments);
 	this._actorCommandWindow.setHandler('act', this.commandAct.bind(this));
 };
@@ -363,6 +368,7 @@ var _Scene_Battle_stop = Scene_Battle.prototype.stop;
 Scene_Battle.prototype.stop = function() {
 	_Scene_Battle_stop.apply(this, arguments);
 	this._messageBox.close();
+	Galv.CI.image = $dataActors[$gameParty.members()[0]._actorId].meta["UTB Sprite"].trim(); // EDIT
 };
 
 var _Scene_Battle_updateStatusWindow = Scene_Battle.prototype.updateStatusWindow;
@@ -382,6 +388,22 @@ Scene_Battle.prototype.endCommandSelection = function() {
 
 var _Scene_Battle_startActorCommandSelection = Scene_Battle.prototype.startActorCommandSelection;
 Scene_Battle.prototype.startActorCommandSelection = function() {
+	
+						if (BattleManager.actor() !== null){
+	console.log(BattleManager.actor()._actorId);
+	console.log($dataActors[BattleManager.actor()._actorId].meta["UTB Sprite"].trim());
+	console.log("aaaaaa");
+	Galv.CI.image = $dataActors[BattleManager.actor()._actorId].meta["UTB Sprite"].trim(); // edit: it works!!!
+	}
+	else{
+		console.log("bbbb");
+	}
+	console.log(Galv.CI.image);
+	//Sprite_GalvCursor.createImage;
+	
+	
+	
+	
 	$gameMessageBattle.setCurrentBattleText();
 	this._messageBox.startMessage();
 	this._messageBox.pause = false;
@@ -514,7 +536,9 @@ Window_BattleStatus.prototype.drawItem = function(index) {
 	var rect = this.basicAreaRect(index);
 	var rect2 = this.gaugeAreaRect(index);
 	var levelOffset = 100;
-	//this.drawText(actor.equips, rect.x , rect.y, rect.width + 56); // save for FUN later
+	//this.drawText(actor.equips, rect.x , rect.y, rect.width + 56); // scary
+	//Galv.CI.image = "chaoheart" //this does work
+
 	if (actor.equips()[2] !== null) {
 	var iconn = actor.equips()[2].iconIndex; //bullshit here
 	}
@@ -522,9 +546,8 @@ Window_BattleStatus.prototype.drawItem = function(index) {
 	var iconn = 81;
 	}
 	this.drawIcon(iconn, rect.x, rect.y-2);
-	console.log(iconn);
-	
-	//Window_EquipSlot.drawItemName(actor.equips()[2], rect.x + 138, rect.y); //doesn't work
+	//console.log(iconn);
+
 	this.drawActorName( actor, rect.x + 15, rect.y, levelOffset); 
 	this.drawText("LV " + actor.level, rect.x + levelOffset + 40, rect.y, rect.width - 156);
 	this.drawActorHp(actor, rect.x + levelOffset*2 + 6, rect2.y+2, 90); //position 90
@@ -545,7 +568,7 @@ Window_BattleStatus.prototype.hpGaugeColor2 = function() {
 
 Window_BattleStatus.prototype.setFocusUTBActor = function(actor) {
 	this._focusUTBActor = actor;
-	this._focusUTBActorHp = actor.hp;
+	this._focusUTBActorHp = actor.hp;	
 };
 
 Window_BattleStatus.prototype.updateFocusUTBActor = function() {
@@ -875,12 +898,12 @@ Window_PartyCommand.prototype.itemTextAlign = function() {
 	return 'center';
 };
 
-Window_PartyCommand.prototype.drawItem = function(index) {
+Window_PartyCommand.prototype.drawItem = function(index) { //only twice at the beginning
 	var rect = this.itemRectForText(index);
 	var align = this.itemTextAlign();
 	this.resetTextColor();
 	this.changePaintOpacity(this.isCommandEnabled(index));
-	this.drawText(this.commandName(index), rect.x + _.cursorOffset, rect.y, rect.width, 'left');
+	this.drawText(this.commandName(index), rect.x + _.cursorOffset, rect.y, rect.width, 'left');	
 };
 
 //-----------------------------------------------------------------------------
@@ -974,7 +997,9 @@ Window_InGame_Message.prototype.terminateMessage = function() {
 	this._goldWindow.close();
 	$gameMessageBattle.clear();
 };
-Window_InGame_Message.prototype.startInput = function() {
+Window_InGame_Message.prototype.startInput = function() { // when you can start moving things
+	
+	
 	if ($gameMessageBattle.isChoice()) {
 		this._choiceWindow.start();
 		return true;
