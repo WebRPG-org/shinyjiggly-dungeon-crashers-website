@@ -3,12 +3,13 @@ HyacinthHeld - Credits
 A game made by:
 Lightmage Studios
 
-writing--
+Writing--
 lavenderSiren
 werterCatt
 purpleTiger
 skyeM
 frozenLake
+diceLibrarian
 awesomeCrawfish
 foolishFool
 couragousScribe
@@ -19,33 +20,49 @@ Visuals-
 Most of the art:
 lavenderSiren
 
-visual rips used:
+Visual rips used:
 pokemon r/s/e tileset and overworld sprites
-Alterniabound (heavily edited bases to fit that sprite style)
-RPG Maker 2003 runtime package indoor tileset/overworld sprites
-that dancing banana gif
+- Alterniabound walkaround charsets
+(heavily edited bases to fit that sprite style)
+- RPG Maker 2003 runtime package 
+indoor tileset/overworld sprites
+- that dancing banana gif
 
-most photos from:
-Unsplash
+Most photos from:
+Unsplash.com
 
-photo of aldgate east taken by Skye
-
-tiny long train: based off the Class 315 in Network SouthEast livery drawn by Mangoslyce, having been recolored by skye https://commons.m.wikimedia.org/wiki/File:Class_315_in_Network_SouthEast_livery.png
-under the Creative Commons Attribution-Share Alike 4.0 International license
+- photo of aldgate east taken by Skye
+- tiny long train: based off the Class 315 in 
+Network SouthEast livery drawn by Mangoslyce, 
+having been recolored by skye 
+https://commons.m.wikimedia.org/wiki/
+File:Class_315_in_Network_SouthEast_livery.png
+under the Creative Commons Attribution-Share Alike 
+4.0 International license
 
 transparent Stand arrow.png 
 
-that scrap of map taped to the map of the greater shoreport area is from an official map of the sword coast from D&D 5th edition
-the playersheets were also from D&D 5e, filled out by werterCatt and purpleTiger
+- That scrap of map taped to the map of the 
+Greater Shoreport area is from an official map of the 
+Sword Coast from D&D 5th edition
+- the playersheets were also from D&D 5e, 
+filled out by werterCatt and purpleTiger
 
-https://sketchfab.com/3d-models/giratina-f738da969af44a17abca7daebb70bffc this was used as a drawing reference
+https://sketchfab.com/3d-models/
+giratina-f738da969af44a17abca7daebb70bffc 
+This was used as a drawing reference for Giratina
 
-photo of a double decker bus from https://circleoflondon.blogspot.com/ (the last post mentions they moved but the new site is gone so this is all that remains)
+photo of a double decker bus from 
+https://circleoflondon.blogspot.com/ 
+(the last post mentions they moved but the new site 
+is gone so this is all that remains)
 
 Music--
 
-Altar of Darkness - official remaster from the 2k3 RTP OST
-That vaporwave remix of Diana Ross's It's Your Move - by macintosh plus - from Floral Shoppe
+Altar of Darkness - 
+official remaster from the 2k3 RTP OST
+That vaporwave remix of Diana Ross's It's Your Move - 
+by macintosh plus - from Floral Shoppe
 Aggrieve(violin refrain) - from Homestuck volume 1-4
 AnteMatter - from Midnight Crew: Drawing Dead
 ASSAULT - from Homestuck volume 9
@@ -218,7 +235,7 @@ shower curtain open hard - by unknown of pixibay
 Skye - voice by herself
 Slash1 - from the RPG Maker 2000 RTP
 spin jump - from Super Mario World
-everything with dnd_ at the beginning in the SE folder - by Toby Fox - from Undertale (except snd_dylanbip)
+everything with snd_ at the beginning in the SE folder - by Toby Fox - from Undertale (except snd_dylanbip)
 Sponge - voiced by rechargedNintendo
 Sword2 - from the RPG Maker 2000 RTP
 Sword5 - from the RPG Maker 2000 RTP
@@ -247,7 +264,7 @@ Dhoom Message SE
 
 Galv:
 Layer Graphics
-Cursor Image (animated menu cursor)
+Cursor Image (upgraded by coelocanth)
 Stationary Turn
 Collide SE
 Puzzle Functions
@@ -293,7 +310,7 @@ Atreyo Ray:
 Title Command- Exit
 
 Jeneeus Guruman:
-Change Graphic (actor graphic change connected to equips)
+Change Graphic (actor graphics for different equips)
 
 Shaz:
 Looping Animations
@@ -309,6 +326,12 @@ Smooth Camera
 
 orochii:
 save file arbitrary text (web friendly)
+
+Skye M.:
+fancycolor (ft. lavendersiren and gimmer)
+
+Krimer:
+ScreenVariables
 
 Alpha testers--
 frozenLake
