@@ -828,7 +828,7 @@ Window_BattleItem.prototype.drawItemName = function(item, x, y, width) {
 		var iconBoxWidth = Window_Base._iconWidth + 4;
 		this.resetTextColor();
 		if (this.needsNumber()) {
-			this.drawText(item.name + "(" + $gameParty.numItems(item) + ")", 
+			this.drawText(item.name + " (" + $gameParty.numItems(item) + ")", 
 				x + _.cursorOffset, y, width - _.cursorOffset, 'left');
 		} else {
 			this.drawText(item.name, x + _.cursorOffset, y, width - iconBoxWidth, 'left');
