@@ -4468,7 +4468,7 @@ Window_Message.prototype.areSettingsChanged = function() {
 
 Window_Message.prototype.updateShowFast = function() {
     if (this.isTriggered()) {
-        this._showFast = true;
+        this._showFast = false; //edit
     }
 };
 

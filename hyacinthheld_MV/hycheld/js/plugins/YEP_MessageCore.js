@@ -1261,7 +1261,7 @@ Window_Message.prototype.updateInput = function() {
     if (this.pause && this.isFastForward()) {
       if (!this._textState) {
         this.pause = false;
-        this.terminateMessage();
+        //this.terminateMessage(); //EDIT
       }
     }
     return Yanfly.Message.Window_Message_updateInput.call(this);
@@ -1277,7 +1277,7 @@ Window_Message.prototype.updateShowFast = function() {
 Yanfly.Message.Window_Message_updateWait =
     Window_Message.prototype.updateWait;
 Window_Message.prototype.updateWait = function() {
-    if (this.isFastForward()) return false;
+    if (this.isFastForward()) return false; //this just fucking pauses it if its set to true
     return Yanfly.Message.Window_Message_updateWait.call(this);
 };
 
@@ -1286,7 +1286,7 @@ Yanfly.Message.Window_Message_startWait =
 Window_Message.prototype.startWait = function(count) {
     if (this._checkWordWrapMode) return;
     Yanfly.Message.Window_Message_startWait.call(this, count);
-    if (this.isFastForward()) this._waitCount = 0;
+    if (this.isFastForward()) this._waitCount = 0; //note: don't change this it's buggy
 };
 
 Yanfly.Message.Window_Message_startPause =
