@@ -57,6 +57,10 @@ https://circleoflondon.blogspot.com/
 (the last post mentions they moved but the new site 
 is gone so this is all that remains)
 
+Controller button images:
+heavily edited from Retrocade Media's Pixel button prompts
+https://retrocademedia.itch.io/buttonprompts4
+
 Music--
 
 Altar of Darkness - 
@@ -283,7 +287,6 @@ Tyruswoo and McKathlin:
 Follower Control
 
 Yoji Ojima:
-Novel Message(ft. Sasuke KANNAZUKI)
 Title Command Position
 Alt Save Screen
 
@@ -332,11 +335,37 @@ fancycolor (ft. lavendersiren and gimmer)
 
 Krimer:
 ScreenVariables
+Destination Sprite
+
+Frogboy:
+Trigger Distance
+
+taaspider:
+EventOffset (upgraded by coelocanth)
+
+gimmer:
+Speedy text
+
+MechPen:
+Fix Window Back Stretch
+
+Kuoushi:
+Simple event fade
+
+krmbn0576:
+Audio Streaming
+
+uchzine:
+UCHU_MobileOperation_Modified_Ext (ft. NAK and Eliaquim)
+
+DreamX:
+Options
 
 Alpha testers--
 frozenLake
 deftlyInscruitable
 Skye M.
+Kamani Arbus
 
 Special thanks--
 gimmer - code help
