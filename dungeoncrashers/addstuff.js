@@ -2,6 +2,7 @@
 let menuareaHTML = '<h2>Links</h2>' +
 '<a href="' + '/dungeoncrashers/index.html">Main page</a><br>' +
 '<a href="' + '/dungeoncrashers/dungeon.html">What is a voidco dungeon?</a><br>' + 
+'<a href="' + '/dungeoncrashers/recounttaleagain.html">Recount Tale... again.</a><br>' +
 '<a href="' + '/dungeoncrashers/crashers.html">Meet the Dungeon Crashers </a> <img src="construct.png" title="Under Construction!" /><br>' +
 '<a href="' + '/dungeoncrashers/locations.html">Locations of Interest</a> <img src="construct.png" title="Under Construction!" /><br>' +
 '<a href="' + '/dungeoncrashers/pokemons.html">Starter Online Pokedex</a><br>' +
@@ -20,6 +21,7 @@ let menuareaHTML = '<h2>Links</h2>' +
 '<a href="' + 'https://discord.gg/Ykh6hrf">Join our discord server!</a><br>' +
 '<a href="' + '/dungeoncrashers/ooc_logs.html">Logs</a><br>' +
 '<a href="' + '/dungeoncrashers/travelsim.html">Dungeon Crashers Travelsim</a><br>' +
+'<a href="' + 'https://sbarg.miraheze.org/wiki/Main_Page">SBARG Wiki</a><br>' +
 '<a href="' + 'http://jingloria.x10.mx/lostpawns/">Lost Pawns Website</a><br>' + 
 '<a href="' + 'http://www.ifelse95.xyz/index.html">ifelse95\'s Website</a><br>' + 
 '<a href="' + 'https://linktr.ee/wertercatt">wetercatt\'s Website</a><br>';
@@ -28,6 +30,7 @@ let menuareaHTML = '<h2>Links</h2>' +
 let icmenuareaHTML = '<h2>Links</h2><br>' +
 '<a href="' + '/dungeoncrashers/index.html">Main page</a><br>' +
 '<a href="' + '/dungeoncrashers/dungeon.html">What is a voidco dungeon?</a><br>' + 
+'<a href="' + '/dungeoncrashers/recounttaleagain.html">Recount Tale... again.</a><br>' +
 '<a href="' + '/dungeoncrashers/crashers.html">Meet the Dungeon Crashers </a> <img src="construct.png" title="Under Construction!" /><br>' +
 '<a href="' + '/dungeoncrashers/locations.html">Locations of Interest</a> <img src="construct.png" title="Under Construction!" /><br>' +
 '<a href="' + '/dungeoncrashers/pokemons.html">Starter Online Pokedex</a><br>' +
@@ -38,6 +41,7 @@ let icmenuareaHTML = '<h2>Links</h2><br>' +
 '<hr>' +
 '<h2>Other Links</h2><a href="' + 'http://jingloria.wertercatt.com/">Jingloria Website</a><br>' + 
 '<a href="' + 'desertia.robotics">Desertia Website</a><br>' +
+'<a href="' + 'https://sbarg.miraheze.org/wiki/In:Main_Page">SBARG Wiki</a><br>' +
 '<a href="' + 'spaceport-mall.shop">Spaceport Website</a><br>' ;
 
 //header

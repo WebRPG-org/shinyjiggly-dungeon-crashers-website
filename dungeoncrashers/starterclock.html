@@ -391,12 +391,28 @@ document.getElementById('kplanet_clock').innerHTML = "In Hourglass City, the tim
 
 
 var UTCdate = new Date();
-var earthdate = UTCdate.toUTCString(); 
+var earthdate = UTCdate.toUTCString().replace("GMT", "UTC"); 
 document.getElementById('v0earth_gmt').innerHTML = earthdate;
 // here please <--------------------
-var DZTdate = new Date();
-var desertiadate = DZTdate.toUTCString(); 
-document.getElementById('v0earth_cst').innerHTML = desertiadate;
+try {
+	const whenAreWe = Temporal.Now.zonedDateTimeISO();
+
+	var DZTdate = whenAreWe.withTimeZone('US/Central');
+	var desertiadate = DZTdate.toLocaleString("en-GB", {weekday: 'short', year: 'numeric', month: 'short', day: '2-digit'});
+	var desertiatime = DZTdate.toLocaleString("en-US", {hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit'});
+	document.getElementById('v0earth_cst').innerHTML = desertiadate + ' ' + desertiatime + ' DZT';
+	
+	// We're getting there...
+	const whenRailway = whenAreWe.withTimeZone('Europe/London');
+	const railwayDate = whenRailway.toLocaleString("en-GB", {weekday: 'short', year: 'numeric', month: 'short', day: '2-digit'});
+	const railwayTime = whenRailway.toLocaleString("en-GB", {hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short'});
+	const railwayDateTime = railwayDate + ' ' + railwayTime;
+	document.getElementById('v0earth_london').innerHTML = railwayDateTime;
+	
+	
+} catch (e) {
+	console.error(e);
+}
 
 var pastdate =new Date();
 //pastdate.setTime(-44582400);
@@ -417,44 +433,55 @@ var vanyear_sec  = vanyear_hrem % 60;
 document.getElementById('splanet_newyear').innerHTML = vanyear_day + " Days, " + vanyear_hour + " Hours, " + vanyear_min + " Minutes, and " + vanyear_sec + " Seconds " + "until Year " + (splanet_year+1) + " on Starter Planet.";
 document.getElementById('unix_clock').innerHTML = unix;
 } 
-                                                
+
+// Some modern-ish JS to update the dates as soon as the DOM is parsed.
+document.onreadystatechange = () => {
+	if (document.readyState == "interactive" || document.readyState == "complete") {
+		univeral_loop();
+	}
+}
+	 
 </script>  
 
 <!-- you're welcome -->
 
 <div id="v0earth_block">
-<p><b>Vanilla Earth</b></p>
-<p id="v0earth_gmt">Tue, 03 May 2022 05:09:05 GMT</p>
-<p id="splanet_newyear">85 Days, 6 Hours, 50 Minutes, and 54 Seconds until Year 7 on Starter Planet.</p>
+<p><b><a href="https://sbarg.miraheze.org/wiki/Vanilla_Earth">Vanilla Earth</a> (<a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a>)</b></p>
+<p id="v0earth_gmt">---, -- --- ---- --:--:-- UTC</p>
+<p><b><a href="https://sbarg.miraheze.org/wiki/Vanilla_Earth">Vanilla Earth</a> (<a href="https://en.wikipedia.org/wiki/London">London</a>)</b> - <a href="https://www.firefox.com/thanks/">This only works with Firefox!</a></p>
+<p id="v0earth_london">---, -- --- ---- --:--:-- ---</p>
 </div>
 
 <p></p>
 
 <div id="splanet_block">
-<p><b>Starter Planet</b></p>
-<p id="splanet_dayname">It is currently the 335rd day of the Year 6</p>
-<p id="splanet_clock">In New Charcherry town, the time is 7:09:06, dawn (which sun tho)</p>
+<p><b><a href="https://sbarg.miraheze.org/wiki/Starter_Planet">Starter Planet</a></b></p>
+
+<p id="splanet_dayname">It is currently the --- day of the Year -</p>
+<p id="splanet_clock">In New Charcherry town, the time is -:--:--, dawn (which sun tho)</p>
 <p id="splanet_village">Quick guide:<br>Sunrise: 6 to 7<br>Noon: 13<br>Sunset: 19 to 20<br>Midnight: 26
+<p id="splanet_newyear">-- Days, - Hours, -- Minutes, and -- Seconds until Year - on Starter Planet.</p>
+
 </p>
 </div>
 <div id="dplanet_block">
-<p><b>Desertia</b></p>
-<p id="v0earth_cst">Tue, 03 May 2022 05:09:05 DZT</p>
+<p><b><a href="https://sbarg.miraheze.org/wiki/Planet_of_Desertia">Desertia</a></b></p>
+<p id="v0earth_cst">---, -- --- ---- --:--:-- DZT</p>
 <p>DZT is functionally the same as CST, daylight savings and all.<br>
-PLEASE FIX ME...</p>
+<a href="https://www.firefox.com/thanks/">This only works with Firefox!</a></p>
 </div>
 
 <div id="kplanet_block">
-<p><b>Korous</b></p>
-<p id="kplanet_dayname">It is currently the 1153rd day of the Year 460, in month 15.</p>
-<p id="kplanet_clock">In Hourglass City, the time is 11:09:06, afternoon</p>
+<p><b><a href="https://sbarg.miraheze.org/wiki/Korous">Korous</a></b></p>
+<p id="kplanet_dayname">It is currently the - day of the Year -, in month -.</p>
+<p id="kplanet_clock">In Hourglass City, the time is -:--:--, - </p>
 <p id="kplanet_village">Quick guide:<br>Sunrise: 4 to 6<br>Noon: 9<br>Sunset: 15 to 16<br>Midnight: 18
 </p>
 </div>
 
 <div id="unix_block">
-<p><b>Unix Time</b></p>
-<p id="unix_clock">1651554546</p>
+<p><b><a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time</a></b></p>
+<p id="unix_clock">-</p>
 </div>
 
 <div id="rise">"Don't mind me, just looking cool."</div>
